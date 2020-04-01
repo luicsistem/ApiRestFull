@@ -1,0 +1,52 @@
+
+
+USE `petcorona`;
+DROP procedure IF EXISTS `employeeAdd`;
+
+DELIMITER $$
+USE `petcorona`$$
+CREATE  PROCEDURE employeeAdd(
+image varchar(100),
+name varchar(30),
+title varchar(100),
+description varchar(300),
+score int,
+address varchar(100) )
+begin
+	
+		insert into employees(image, name, title, description, score, address)
+		values (image, name, title, description, score, address);
+		
+   
+END$$
+
+DELIMITER ;
+-----------------------------------------------------------------------
+ACTUALIZAR :
+
+USE `petcorona`;
+DROP procedure IF EXISTS `employeeEdit`;
+
+DELIMITER $$
+USE `petcorona`$$
+CREATE  PROCEDURE employeeEdit(
+pid int,
+pimage varchar(100),
+pname varchar(30),
+ptitle varchar(100),
+pdescription varchar(300),
+pscore int,
+paddress varchar(100) )
+begin
+ update employees set
+ image = pimage,
+ name = pname,
+ title = ptitle,
+ description = pdescription,
+ score = pscore,
+ address = paddress
+
+ where  id = pid;
+ end$$
+
+DELIMITER ;

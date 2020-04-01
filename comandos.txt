@@ -1,0 +1,13 @@
+npm init --yes
+npm install express mysql
+npm install nodemon -D  => dependencia de desarrollo (refresca el servidor)
+
+
+
+en el packjson cambiar :
+
+ "scripts": {
+    "dev": "nodemon src/index.js"
+  },
+
+en el terminal =>  $ npm run dev
